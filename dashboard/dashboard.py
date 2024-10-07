@@ -4,12 +4,19 @@ import streamlit as st
 
 # Judul dashboard
 st.title("Dashboard Pengamatan Konsentrasi PM2.5 dan PM10")
-image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcIpM6ZiRMS4THlMzbSjryU-uCvNhNIo5iMg&s"
-# Menampilkan gambar
-try:
-    st.image(image, caption="Gambar PM2.5 dan PM10", use_column_width=True)
-except FileNotFoundError:
-    st.error("Image file not found.")
+
+st.sidebar.title("Sidebar")
+
+# Membuat layout dengan 2 kolom: sidebar dan gambar di konten utama
+col1, col2 = st.columns([1, 3])  # Rasio kolom: 1 untuk sidebar, 3 untuk gambar
+
+# Menampilkan gambar di kolom kedua
+with col2:
+    image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcIpM6ZiRMS4THlMzbSjryU-uCvNhNIo5iMg&s"
+    try:
+        st.image(image, caption="Gambar PM2.5 dan PM10", use_column_width=True)
+    except FileNotFoundError:
+        st.error("Image file not found.")
 
 # Data kedua (untuk perubahan PM2.5 dari jam 0 hingga 23)
 data2 = {
