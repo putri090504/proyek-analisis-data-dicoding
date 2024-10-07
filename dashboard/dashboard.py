@@ -4,7 +4,7 @@ import streamlit as st
 
 # Judul dashboard
 st.title("Dashboard Pengamatan Konsentrasi PM2.5 dan PM10")
-image = "E:/Python/nabila/nabila/dashboard/shunyi.png"
+image = "shunyi.png"
 # Menampilkan gambar
 try:
     st.image(image, caption="Gambar PM2.5 dan PM10", use_column_width=True)
